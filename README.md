@@ -3,7 +3,7 @@
 
 Heart Guardian is a personal healthcare AI assistant for heart disease prediction. A scikit-learn ML prediction model.
 
-Classifier Used : Random Forest Classifier
+Classifier : Random Forest Classifier
 
 
 ## Python
