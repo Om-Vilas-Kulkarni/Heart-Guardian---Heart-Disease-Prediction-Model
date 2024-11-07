@@ -20,20 +20,21 @@ Install required packages:-
    pip install -r requirements.txt
 ```
     
-## Screenshots
+## Histogram, Accuracy, Confusion Matrix, Precision, Recall and F1-Score of Model
+![Histogram](https://github.com/user-attachments/assets/2a5750f3-fed5-4f78-a7d8-bbcd1571584e)
+![All](https://github.com/user-attachments/assets/ee7bd381-c428-4912-a77e-6a80ea010da3)
+![imp f](https://github.com/user-attachments/assets/8d4e89e8-c0c4-4d24-a40b-9f098dcd9603)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-
-## Model Specifications
+## Model Overview
+Kaggle Dataset : `David Lapp - Heart Disease Dataset`
 
 Model Accuracy : `97-100 %`
 
-Model : `ANOTHER_API_KEY`
+Model Precision : `98-100 %`
 
+Model Recall : `97-100 %`
 
-
-
+Model F1-Score : `98-100 %`
 
 ## Authors
 
