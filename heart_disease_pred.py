@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split,KFold,cross_val_score
 from sklearn.metrics import accuracy_score,confusion_matrix,classification_report
 import pyttsx3
 
@@ -68,7 +68,7 @@ def checkup():
             pslope_ind = "Flat ST may indicate moderate risk"
             checkfluoro(p_age,p_gender,p_cp,p_rbps,p_chol,p_fbs,p_ecg,p_exang,p_slope)
         elif p_slope == 2:
-            pslope_ind = "ST Downsloping indicates less blood flow to heat"
+            pslope_ind = "ST Downsloping indicates less blood flow to heart"
             checkfluoro(p_age, p_gender, p_cp, p_rbps, p_chol, p_fbs, p_ecg, p_exang,p_slope)
         else:
             speak("Invalid Input!")
@@ -229,11 +229,15 @@ try:
     mconfusionmatrix = confusion_matrix(y_test, y_pred)
     classificationreport = classification_report(y_test, y_pred)
     imp_features = pd.Series(model.feature_importances_, index=X_train.columns).sort_values(ascending=False)
+    kf = KFold(n_splits=5,shuffle=True,random_state=42)
+    scores = cross_val_score(model,x,y,cv=kf)
     checkup()
     print(f"Accuracy of Model: {accuracy * 100} %")
     print(f"Confusion Matrix of Model:\n{mconfusionmatrix}")
     print(f"Classification Report of Model:\n{classificationreport}")
     print(f"Important Features:\n{imp_features}")
+    print(f"K-Folds Cross Validation Report : {scores}")
+    print(f"Model's Accuracy using K-Folds Cross Validation: {scores.mean()*100} % ")
 
 except Exception as error:
     print(error)
