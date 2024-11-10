@@ -22,7 +22,7 @@ Model F1-Score : `98-100 %`
 
 Make sure you have revelant python version, 'IDE(Pycharm)' / 'JupyterNotebook' Installed.
 
-Recommended `Python==3.12.4` for ways to get started.
+Recommended `Python==3.12.4` for better ways to get started.
 
 
 ## Installation
